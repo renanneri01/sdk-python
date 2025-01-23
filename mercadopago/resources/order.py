@@ -11,7 +11,7 @@ class Order(MPBase):
 
     From basic to advanced configurations, you control the whole experience.
 
-    [Click here for more info](https://www.mercadopago.com.br/developers/en/guides/online-payments/checkout-api/introduction/)  # pylint: disable=line-too-long
+    [Click here for more info](https://www.mercadopago.com/developers/en/guides/online-payments/checkout-api/introduction/)  # pylint: disable=line-too-long
     """
 
     def create(self, order_object, request_options=None):
