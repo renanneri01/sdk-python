@@ -91,8 +91,8 @@ class TestOrder(unittest.TestCase):
         order_id = order_created["response"]["id"]
         process_response = self.sdk.order().process(order_id)
         if process_response.get("status") != 200 or not process_response.get("response"):
-            self.fail(f"Failed to create an order: {process_response}")
-        self.assertEqual(process_response["status"], 200, "Status HTTP inválido ao processar o pedido")
+            self.fail(f"Failed to process an order: {process_response}")
+        self.assertEqual(process_response["status"], 200, "Invalid HTTP status when processing the Order")
         print("Order processed successfully.")
 
     def create_order_canceled_or_captured(self, card_token_id):
@@ -159,7 +159,7 @@ class TestOrder(unittest.TestCase):
             self.fail(f"Failed to create order: {order_created}")
         return order_created["response"]["id"]
 
-    def test_add_transaction(self):
+    def test_create_transaction(self):
         card_token_id = self.create_test_card()
         print("Card token ID:", card_token_id)
 
@@ -180,9 +180,9 @@ class TestOrder(unittest.TestCase):
             ]
         }
 
-        print("Adding transaction...")
+        print("Creating transaction...")
         transaction_added = self.sdk.order().create_transaction(order_id, transaction_object)
-        print("Transaction addition response:", transaction_added)
+        print("Transaction creation response:", transaction_added)
 
         self.assertEqual(transaction_added["status"], 201)
 
