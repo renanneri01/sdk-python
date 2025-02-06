@@ -221,7 +221,7 @@ class TestOrder(unittest.TestCase):
         self.assertEqual(order_captured["status"], 200)
         self.assertEqual(order_captured["response"]["status"], "processed")
 
-    def test_add_transaction(self):
+    def test_create_transaction(self):
         card_token_id = self.create_test_card()
         order_id = self.create_order_builder_mode(card_token_id)
         transaction_object = {
@@ -238,8 +238,8 @@ class TestOrder(unittest.TestCase):
             ]
         }
 
-        transaction_added = self.sdk.order().create_transaction(order_id, transaction_object)
-        self.assertEqual(transaction_added["status"], 201)
+        transaction_created = self.sdk.order().create_transaction(order_id, transaction_object)
+        self.assertEqual(transaction_created["status"], 201)
 
     def test_update_transaction(self):
         card_token_id = self.create_test_card()
