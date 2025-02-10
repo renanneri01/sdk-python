@@ -74,7 +74,7 @@ class Order(MPBase):
         return self._post(uri="/v1/orders/" + str(order_id) + "/process", request_options=request_options)
 
     def cancel(self, order_id, request_options=None):
-        """[Click here for more info](https://www.mercadopago.com/developers/en/reference/order/in-person-payments/point/cancel-order/post) # pylint: disable=line-too-long
+        """[Click here for more info](https://www.mercadopago.com/developers/en/reference/order/online-payments/cancel-order/post) # pylint: disable=line-too-long
         Args:
             order_id (str): Order ID
             request_options (mercadopago.config.request_options, optional): An instance of
