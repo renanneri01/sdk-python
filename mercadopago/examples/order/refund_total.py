@@ -55,7 +55,7 @@ def main():
         # Get the order ID from the response
         order_id = response["response"]["id"]
 
-        # Call the method to PROCESS the order created in Manual Mode
+        # Call the method to REFUND TOTALLY the transaction in the order
         transaction_refund = sdk.order().refund_transaction(order_id)
         print("Transaction Total Refunded:", transaction_refund["response"])
     except Exception as e:

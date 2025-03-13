@@ -40,7 +40,7 @@ def main():
             ]
         },
         "payer": {
-            "email": "<YOUR_EMAIL_TEST>"
+            "email": "<PAYER_EMAIL>"
         }
     }
 

@@ -64,7 +64,7 @@ def main():
           ]
         }
 
-        # Call the method to PROCESS the order created in Manual Mode
+        # Call the method to REFUND
         transaction_refund = sdk.order().refund_transaction(order_id, refund)
         print("Transaction Partially Refunded:", transaction_refund["response"])
     except Exception as e:

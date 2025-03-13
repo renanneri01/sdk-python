@@ -43,7 +43,7 @@ def main():
             ]
         },
         "payer": {
-            "email": "<YOUR_EMAIL_TEST>"
+            "email": "<PAYER_EMAIL>"
         }
     }
 
@@ -56,7 +56,7 @@ def main():
         order_id = response["response"]["id"]
         transaction_id = response["response"]["transactions"]["payments"][0]["id"]
 
-        # Call the method to PROCESS the order created in Manual Mode
+        # Call the method to DELETE the transaction in the order
         transaction_deleted = sdk.order().delete_transaction(order_id, transaction_id)
         print("Transaction Successful Deleted.", transaction_deleted["response"])
     except Exception as e:

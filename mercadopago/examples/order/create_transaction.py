@@ -30,7 +30,7 @@ def main():
         "total_amount": "200.00",
         "external_reference": "ext_ref_1234",
         "payer": {
-            "email": "<YOUR_EMAIL_TEST>"
+            "email": "<PAYER_EMAIL>"
         }
     }
 
@@ -55,7 +55,7 @@ def main():
                 }
             ]
         }
-        # Call the method to PROCESS the order created in Manual Mode
+        # Call the method to CREATE A TRANSACTION in the order
         transaction_created = sdk.order().create_transaction(order_id, transaction_object)
         print("Transaction created:", transaction_created["response"])
     except Exception as e:

@@ -63,7 +63,7 @@ def main():
             }
         }
 
-        # Call the method to PROCESS the order created in Manual Mode
+        # Call the method to UPDATE the transaction in the order
         update = sdk.order().update_transaction(order_id, transaction_id, transaction_update)
         print("Transaction Updated:", update["response"])
     except Exception as e:

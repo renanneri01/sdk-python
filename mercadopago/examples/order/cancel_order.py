@@ -44,7 +44,7 @@ def main():
             ]
         },
         "payer": {
-            "email": "<YOUR_EMAIL_TEST>"
+            "email": "<PAYER_EMAIL>"
         }
     }
 
@@ -57,7 +57,7 @@ def main():
         order_id = response["response"]["id"]
 
         time.sleep(5)
-        # Call the method to PROCESS the order created in Manual Mode
+        # Call the method to CANCEL
         order_details = sdk.order().cancel(order_id)
         print("Order details:", order_details["response"])
     except Exception as e:

@@ -42,7 +42,7 @@ def main():
             ]
         },
         "payer": {
-            "email": "<YOUR_EMAIL_TEST>"
+            "email": "<PAYER_EMAIL>"
         }
     }
 
@@ -54,7 +54,7 @@ def main():
         # Get the order ID from the response
         order_id = response["response"]["id"]
 
-        # Call the method to PROCESS the order created in Manual Mode
+        # Call the method to CAPTURE the order
         order_details = sdk.order().capture(order_id)
         print("Order details:", order_details["response"])
     except Exception as e:
